@@ -1,0 +1,58 @@
+﻿<Window x:Name="The_Cashier" x:Class="TheCashier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+
+        Title="MainWindow" Height="710" Width="470">
+    <Grid Margin="0,0,2,-3">
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="217" Margin="58,328,0,0" VerticalAlignment="Top" Width="344">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding title}" TextAlignment="Left" />
+                        <TextBlock Grid.Column="1" Text="{Binding quantity}"  TextAlignment="Right"  />
+                        <TextBlock Grid.Column="2" Text="{Binding price}"  TextAlignment="Right" />
+                        <TextBlock Grid.Column="3" Text="{Binding subtotal}" TextAlignment="Right" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Item" HorizontalAlignment="Left" Margin="57,102,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="itemNameBox" HorizontalAlignment="Left" Height="23" Margin="147,106,0,0" TextWrapping="Wrap" Text="Lampu Led" VerticalAlignment="Top" Width="255"/>
+        <Label Content="Tipe" HorizontalAlignment="Left" Margin="57,140,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="typeBox" HorizontalAlignment="Left" Margin="147,141,0,0" VerticalAlignment="Top" Width="255">
+            <ComboBoxItem>Barang</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Jasa</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="63,577,0,0" VerticalAlignment="Top" Width="46"/>
+        <Label Content="The Cashier" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top" Width="344" FontWeight="Bold" FontSize="36"/>
+        <Button x:Name="addButton" Content="Tambahkan" HorizontalAlignment="Left" Margin="326,264,0,0" VerticalAlignment="Top" Width="76" Click="AddButton_Click"/>
+        <Label Content="Jumlah" HorizontalAlignment="Left" Margin="57,182,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="quantityBox" HorizontalAlignment="Left" Height="23" Margin="147,183,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="255"/>
+        <Label Content="Harga(Rp)" HorizontalAlignment="Left" Margin="58,221,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="priceBox" HorizontalAlignment="Left" Height="23" Margin="147,222,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="255"/>
+        <ListBox HorizontalAlignment="Left" Height="27" Margin="58,301,0,0" VerticalAlignment="Top" Width="344">
+            <Grid Margin="0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"  />
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Item"  TextAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="quantity"  TextAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="price" TextAlignment="Center"/>
+                <TextBlock Grid.Column="3" Text="subtotal" TextAlignment="Center"/>
+            </Grid>
+        </ListBox>
+        <Label x:Name="totalLabel" Content="Rp. 0" HorizontalAlignment="Left" Margin="124,577,0,0" VerticalAlignment="Top" Width="278"/>
+    </Grid>
+</Window>
